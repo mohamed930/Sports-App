@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		D917C4AC260FC471002A6F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D917C4AA260FC471002A6F21 /* LaunchScreen.storyboard */; };
 		D917C4C6260FC514002A6F21 /* Sports_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917C4C5260FC514002A6F21 /* Sports_AppTests.swift */; };
 		D917C4D0260FC52C002A6F21 /* HomeViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917C4CF260FC52C002A6F21 /* HomeViewControllersTests.swift */; };
+		D917C4E8260FCCF2002A6F21 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917C4E6260FCCF2002A6F21 /* SportsCell.swift */; };
+		D917C4E9260FCCF2002A6F21 /* SportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D917C4E7260FCCF2002A6F21 /* SportsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		D917C4C5260FC514002A6F21 /* Sports_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_AppTests.swift; sourceTree = "<group>"; };
 		D917C4C7260FC514002A6F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D917C4CF260FC52C002A6F21 /* HomeViewControllersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllersTests.swift; sourceTree = "<group>"; };
+		D917C4E6260FCCF2002A6F21 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
+		D917C4E7260FCCF2002A6F21 /* SportsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsCell.xib; sourceTree = "<group>"; };
 		FDE604A4A78A08B57D518F3A /* Pods-Sports-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Sports-AppTests/Pods-Sports-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +82,6 @@
 				FDE604A4A78A08B57D518F3A /* Pods-Sports-AppTests.debug.xcconfig */,
 				D7A255053363D7BAD1FE5953 /* Pods-Sports-AppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +137,7 @@
 			children = (
 				D917C4A2260FC470002A6F21 /* Main.storyboard */,
 				D917C4AA260FC471002A6F21 /* LaunchScreen.storyboard */,
+				D917C4E5260FCCD6002A6F21 /* Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +160,23 @@
 				D917C4C7260FC514002A6F21 /* Info.plist */,
 			);
 			path = "Sports-AppTests";
+			sourceTree = "<group>";
+		};
+		D917C4E5260FCCD6002A6F21 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D917C4EC260FCCF9002A6F21 /* Sport Cell  */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D917C4EC260FCCF9002A6F21 /* Sport Cell  */ = {
+			isa = PBXGroup;
+			children = (
+				D917C4E6260FCCF2002A6F21 /* SportsCell.swift */,
+				D917C4E7260FCCF2002A6F21 /* SportsCell.xib */,
+			);
+			path = "Sport Cell ";
 			sourceTree = "<group>";
 		};
 		E72FBD577CBA34F81F9EBFD2 /* Frameworks */ = {
@@ -252,6 +273,7 @@
 			files = (
 				D917C4AC260FC471002A6F21 /* LaunchScreen.storyboard in Resources */,
 				D917C4A9260FC471002A6F21 /* Assets.xcassets in Resources */,
+				D917C4E9260FCCF2002A6F21 /* SportsCell.xib in Resources */,
 				D917C4A4260FC470002A6F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +358,7 @@
 			files = (
 				D917C4A1260FC470002A6F21 /* HomeViewControllers.swift in Sources */,
 				D917C49D260FC470002A6F21 /* AppDelegate.swift in Sources */,
+				D917C4E8260FCCF2002A6F21 /* SportsCell.swift in Sources */,
 				D917C4A7260FC470002A6F21 /* Sports_App.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
