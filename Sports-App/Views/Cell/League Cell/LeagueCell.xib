@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="KGk-i7-Jjw" customClass="LeagueCell" customModule="Sports_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="344" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32i-4W-cFO">
+                        <rect key="frame" x="16" y="11" width="328" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yN6-5J-uOX">
+                        <rect key="frame" x="16" y="33" width="328" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.28160761443661969" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bsU-kZ-6b6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="32i-4W-cFO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="HnG-Gm-Tpc"/>
+                    <constraint firstItem="32i-4W-cFO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="N6v-g8-1gs"/>
+                    <constraint firstItem="yN6-5J-uOX" firstAttribute="leading" secondItem="32i-4W-cFO" secondAttribute="leading" id="WIn-4Z-Uqk"/>
+                    <constraint firstItem="yN6-5J-uOX" firstAttribute="trailing" secondItem="32i-4W-cFO" secondAttribute="trailing" id="bgr-tA-SVX"/>
+                    <constraint firstAttribute="trailing" secondItem="32i-4W-cFO" secondAttribute="trailing" id="oFy-26-vgV"/>
+                    <constraint firstItem="yN6-5J-uOX" firstAttribute="top" secondItem="32i-4W-cFO" secondAttribute="bottom" constant="1" id="sRn-Ui-a5P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="LeagueNameLabel" destination="32i-4W-cFO" id="BjQ-Cu-usA"/>
+            </connections>
+            <point key="canvasLocation" x="141.30434782608697" y="97.767857142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -87,6 +87,14 @@ extension HomeViewControllers: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let next = story.instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
+        
+        next.PickedSportName = self.SportsArr[indexPath.row].sportName
+        next.modalPresentationStyle = .fullScreen
+        
+        self.present(next, animated: true, completion: nil)
+        
     }
     
 }

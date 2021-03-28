@@ -33,7 +33,7 @@
         <!--Sports-->
         <scene sceneID="iBP-0g-A1q">
             <objects>
-                <viewController id="p6y-dh-EyF" customClass="HomeViewControllers" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewControllers" id="p6y-dh-EyF" customClass="HomeViewControllers" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AbO-36-VQc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,77 @@
             </objects>
             <point key="canvasLocation" x="-914.39999999999998" y="211.33004926108376"/>
         </scene>
+        <!--Leagues View Controller-->
+        <scene sceneID="Km6-s2-YhO">
+            <objects>
+                <viewController storyboardIdentifier="LeaguesViewController" id="vry-0v-7jX" customClass="LeaguesViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ID7-zD-enb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOf-rF-ivi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDD-mi-Alw">
+                                        <rect key="frame" x="26" y="51" width="10" height="19.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19.329999999999998" id="XRY-3i-12g"/>
+                                            <constraint firstAttribute="width" constant="10" id="zVD-4d-hlW"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="BTNBack"/>
+                                        <connections>
+                                            <action selector="BTNBack:" destination="vry-0v-7jX" eventType="touchUpInside" id="QwS-9d-Ki4"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-WG-VJf">
+                                        <rect key="frame" x="149.66666666666666" y="44" width="76" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="A5T-Yh-kDV"/>
+                                            <constraint firstAttribute="height" constant="32" id="XL4-lY-PSh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dDD-mi-Alw" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="51" id="4Fw-bL-dPb"/>
+                                    <constraint firstItem="dDD-mi-Alw" firstAttribute="leading" secondItem="eOf-rF-ivi" secondAttribute="leading" constant="26" id="OGo-5J-GR4"/>
+                                    <constraint firstItem="b7t-WG-VJf" firstAttribute="centerX" secondItem="eOf-rF-ivi" secondAttribute="centerX" id="a2J-Vo-gA8"/>
+                                    <constraint firstAttribute="height" constant="83" id="tA2-eH-Qt1"/>
+                                    <constraint firstItem="b7t-WG-VJf" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="44" id="xsF-Ao-uE6"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dSv-rV-cL7">
+                                <rect key="frame" x="0.0" y="91" width="375" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vry-0v-7jX" id="5ds-cC-Hn1"/>
+                                    <outlet property="delegate" destination="vry-0v-7jX" id="SdF-Sp-jSp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oHa-0E-RXE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eOf-rF-ivi" firstAttribute="leading" secondItem="oHa-0E-RXE" secondAttribute="leading" id="5p0-Do-j1E"/>
+                            <constraint firstItem="oHa-0E-RXE" firstAttribute="trailing" secondItem="dSv-rV-cL7" secondAttribute="trailing" id="D8T-dp-xr7"/>
+                            <constraint firstItem="dSv-rV-cL7" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="bottom" constant="8" symbolic="YES" id="K5t-zW-EUe"/>
+                            <constraint firstItem="eOf-rF-ivi" firstAttribute="top" secondItem="ID7-zD-enb" secondAttribute="top" id="Ki1-mF-lrO"/>
+                            <constraint firstItem="oHa-0E-RXE" firstAttribute="trailing" secondItem="eOf-rF-ivi" secondAttribute="trailing" id="TJW-mu-QxA"/>
+                            <constraint firstAttribute="bottom" secondItem="dSv-rV-cL7" secondAttribute="bottom" id="XKz-lF-FTE"/>
+                            <constraint firstItem="dSv-rV-cL7" firstAttribute="leading" secondItem="oHa-0E-RXE" secondAttribute="leading" id="rpM-uY-CN0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dSv-rV-cL7" id="YAV-pS-GDc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRQ-CG-YII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="886.69950738916259"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="P0U-1k-6Zb">
             <objects>
@@ -128,6 +199,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BTNBack" width="10" height="19.333333969116211"/>
         <image name="LoveButton" width="28" height="28"/>
         <image name="Search" width="16" height="16"/>
         <image name="Sport Page" width="28" height="28"/>
