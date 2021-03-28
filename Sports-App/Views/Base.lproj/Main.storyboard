@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Favourtis-->
         <scene sceneID="LJe-tS-zkl">
@@ -28,7 +33,7 @@
         <!--Sports-->
         <scene sceneID="iBP-0g-A1q">
             <objects>
-                <viewController id="p6y-dh-EyF" sceneMemberID="viewController">
+                <viewController id="p6y-dh-EyF" customClass="HomeViewControllers" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AbO-36-VQc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +46,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="h1e-IU-1L7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -74,6 +79,10 @@
                                     <inset key="sectionInset" minX="22" minY="15" maxX="22" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p6y-dh-EyF" id="fUu-IP-8O7"/>
+                                    <outlet property="delegate" destination="p6y-dh-EyF" id="kbF-fT-vlM"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uGL-UZ-yZ6"/>
@@ -88,7 +97,10 @@
                             <constraint firstItem="uGL-UZ-yZ6" firstAttribute="trailing" secondItem="dAs-cH-C3I" secondAttribute="trailing" id="wpl-Vy-48d"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sports" selectedImage="Sport Page" id="yFL-Tb-YsP"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="Sport Page" id="yFL-Tb-YsP"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dAs-cH-C3I" id="xFJ-d1-m92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYl-gg-4gD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

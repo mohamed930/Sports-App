@@ -19,6 +19,18 @@
 		D917C4D0260FC52C002A6F21 /* HomeViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917C4CF260FC52C002A6F21 /* HomeViewControllersTests.swift */; };
 		D917C4E8260FCCF2002A6F21 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917C4E6260FCCF2002A6F21 /* SportsCell.swift */; };
 		D917C4E9260FCCF2002A6F21 /* SportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D917C4E7260FCCF2002A6F21 /* SportsCell.xib */; };
+		D9F55C922610030C00B03552 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55C912610030C00B03552 /* UIColor.swift */; };
+		D9F55CA52610090D00B03552 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CA42610090D00B03552 /* BaseURL.swift */; };
+		D9F55CA9261009C200B03552 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CA8261009C200B03552 /* BaseAPI.swift */; };
+		D9F55CAD26100A0600B03552 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CAC26100A0600B03552 /* TargetType.swift */; };
+		D9F55CB226100A5000B03552 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CB126100A5000B03552 /* ErrorMessage.swift */; };
+		D9F55CB826100A6A00B03552 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CB726100A6A00B03552 /* ErrorResponse.swift */; };
+		D9F55CBD26100AED00B03552 /* SportsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CBC26100AED00B03552 /* SportsNetworking.swift */; };
+		D9F55CC326100CBB00B03552 /* SportsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CC226100CBB00B03552 /* SportsAPI.swift */; };
+		D9F55CC726100D0B00B03552 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CC626100D0B00B03552 /* SportsModel.swift */; };
+		D9F55CD0261010B000B03552 /* SportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CCF261010B000B03552 /* SportsResponse.swift */; };
+		D9F55CD52610129D00B03552 /* SportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CD42610129D00B03552 /* SportsViewModel.swift */; };
+		D9F55CE926101CFC00B03552 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CE826101CFC00B03552 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,20 @@
 		D917C4CF260FC52C002A6F21 /* HomeViewControllersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllersTests.swift; sourceTree = "<group>"; };
 		D917C4E6260FCCF2002A6F21 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
 		D917C4E7260FCCF2002A6F21 /* SportsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsCell.xib; sourceTree = "<group>"; };
+		D9F55C912610030C00B03552 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D9F55C9C261004F000B03552 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		D9F55C9F261006AB00B03552 /* American Typewriter Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "American Typewriter Regular.ttf"; sourceTree = "<group>"; };
+		D9F55CA42610090D00B03552 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		D9F55CA8261009C200B03552 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		D9F55CAC26100A0600B03552 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		D9F55CB126100A5000B03552 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		D9F55CB726100A6A00B03552 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		D9F55CBC26100AED00B03552 /* SportsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsNetworking.swift; sourceTree = "<group>"; };
+		D9F55CC226100CBB00B03552 /* SportsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsAPI.swift; sourceTree = "<group>"; };
+		D9F55CC626100D0B00B03552 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
+		D9F55CCF261010B000B03552 /* SportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsResponse.swift; sourceTree = "<group>"; };
+		D9F55CD42610129D00B03552 /* SportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewModel.swift; sourceTree = "<group>"; };
+		D9F55CE826101CFC00B03552 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		FDE604A4A78A08B57D518F3A /* Pods-Sports-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports-AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Sports-AppTests/Pods-Sports-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				D917C4B6260FC4C0002A6F21 /* AppDelegate */,
+				D9F55C90261002F300B03552 /* Custome + Extenstion */,
+				D9F55CA22610089A00B03552 /* NetworkManager */,
+				D9F55CCC2610105100B03552 /* Models */,
 				D917C4B8260FC4C9002A6F21 /* Controllers */,
 				D917C4BA260FC4D2002A6F21 /* Views */,
 				D917C4BB260FC4DB002A6F21 /* Resources */,
@@ -145,6 +174,7 @@
 		D917C4BB260FC4DB002A6F21 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9F55C95261003FC00B03552 /* Fonts */,
 				D917C4A8260FC471002A6F21 /* Assets.xcassets */,
 				D917C4AD260FC471002A6F21 /* Info.plist */,
 				D917C4A5260FC470002A6F21 /* Sports_App.xcdatamodeld */,
@@ -177,6 +207,80 @@
 				D917C4E7260FCCF2002A6F21 /* SportsCell.xib */,
 			);
 			path = "Sport Cell ";
+			sourceTree = "<group>";
+		};
+		D9F55C90261002F300B03552 /* Custome + Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55C912610030C00B03552 /* UIColor.swift */,
+				D9F55CE826101CFC00B03552 /* UIImageView.swift */,
+			);
+			path = "Custome + Extenstion";
+			sourceTree = "<group>";
+		};
+		D9F55C95261003FC00B03552 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55C9C261004F000B03552 /* OpenSans-SemiBold.ttf */,
+				D9F55C9F261006AB00B03552 /* American Typewriter Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D9F55CA22610089A00B03552 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CBB26100AC000B03552 /* Sports */,
+				D9F55CA3261008FF00B03552 /* Base */,
+				D9F55CB026100A3700B03552 /* Error */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		D9F55CA3261008FF00B03552 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CA42610090D00B03552 /* BaseURL.swift */,
+				D9F55CA8261009C200B03552 /* BaseAPI.swift */,
+				D9F55CAC26100A0600B03552 /* TargetType.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D9F55CB026100A3700B03552 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CB126100A5000B03552 /* ErrorMessage.swift */,
+				D9F55CB726100A6A00B03552 /* ErrorResponse.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		D9F55CBB26100AC000B03552 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CBC26100AED00B03552 /* SportsNetworking.swift */,
+				D9F55CC226100CBB00B03552 /* SportsAPI.swift */,
+				D9F55CCF261010B000B03552 /* SportsResponse.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
+		D9F55CCC2610105100B03552 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CD32610128900B03552 /* SportsModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D9F55CD32610128900B03552 /* SportsModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55CC626100D0B00B03552 /* SportsModel.swift */,
+				D9F55CD42610129D00B03552 /* SportsViewModel.swift */,
+			);
+			path = SportsModel;
 			sourceTree = "<group>";
 		};
 		E72FBD577CBA34F81F9EBFD2 /* Frameworks */ = {
@@ -356,10 +460,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F55CC726100D0B00B03552 /* SportsModel.swift in Sources */,
 				D917C4A1260FC470002A6F21 /* HomeViewControllers.swift in Sources */,
 				D917C49D260FC470002A6F21 /* AppDelegate.swift in Sources */,
+				D9F55CA52610090D00B03552 /* BaseURL.swift in Sources */,
 				D917C4E8260FCCF2002A6F21 /* SportsCell.swift in Sources */,
+				D9F55CB226100A5000B03552 /* ErrorMessage.swift in Sources */,
+				D9F55CBD26100AED00B03552 /* SportsNetworking.swift in Sources */,
+				D9F55CB826100A6A00B03552 /* ErrorResponse.swift in Sources */,
+				D9F55CE926101CFC00B03552 /* UIImageView.swift in Sources */,
+				D9F55CC326100CBB00B03552 /* SportsAPI.swift in Sources */,
+				D9F55CAD26100A0600B03552 /* TargetType.swift in Sources */,
+				D9F55CD52610129D00B03552 /* SportsViewModel.swift in Sources */,
 				D917C4A7260FC470002A6F21 /* Sports_App.xcdatamodeld in Sources */,
+				D9F55CD0261010B000B03552 /* SportsResponse.swift in Sources */,
+				D9F55C922610030C00B03552 /* UIColor.swift in Sources */,
+				D9F55CA9261009C200B03552 /* BaseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

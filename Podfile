@@ -8,7 +8,7 @@ target 'Sports-App' do
   # Pods for Sports-App
   pod 'RappleProgressHUD'
   pod 'Alamofire'
-  pod 'AlamofireImage'
+  pod 'Kingfisher'
   pod 'IQKeyboardManagerSwift'
 
   target 'Sports-AppTests' do

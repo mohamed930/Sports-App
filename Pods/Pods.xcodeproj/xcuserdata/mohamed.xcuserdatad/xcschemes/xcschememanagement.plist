@@ -11,14 +11,14 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>AlamofireImage.xcscheme</key>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
