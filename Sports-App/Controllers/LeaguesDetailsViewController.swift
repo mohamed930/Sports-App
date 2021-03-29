@@ -152,7 +152,11 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView.tag == 3 {
-            
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let next = story.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+            next.TeamID = self.AllTeamsArr[indexPath.row].idTeam
+            next.modalPresentationStyle = .fullScreen
+            self.present(next, animated: true, completion: nil)
         }
         
     }
