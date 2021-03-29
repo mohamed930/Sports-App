@@ -8,6 +8,7 @@
 import UIKit
 import RappleProgressHUD
 import Kingfisher
+import SafariServices
 
 class TeamDetailsViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class TeamDetailsViewController: UIViewController {
     @IBOutlet weak var StadiumLabel: UILabel!
     @IBOutlet weak var LeagueNameLabel: UILabel!
     @IBOutlet weak var DetailsTextArea: UITextView!
+    @IBOutlet weak var BTNBack: UIButton!
     
     // MARK:- TODO:- Instialise new variable HERE:-
     var TeamID = String()
@@ -40,13 +42,29 @@ class TeamDetailsViewController: UIViewController {
             
             case .success(let res):
                 
-                DispatchQueue.main.async {
+               // print("F: \(res?.teams[0].strTeamFanart1)")
+                
+                if res?.teams[0].strTeamFanart1 == "" || res?.teams[0].strTeamFanart1 == "NO Image" || res?.teams[0].strTeamFanart1 == nil {
+                   
+                    self.CoverImageView.image = UIImage(named: "No_image1")
+                    self.BTNBack.setBackgroundImage(UIImage(named: "backBlack"), for: .normal)
                     
-                    self.CoverImageView.kf.setImage(with:URL(string: (res?.teams[0].strTeamFanart1 ?? "NO Image")))
-                    self.TeamBadgeImageView.kf.setImage(with: URL(string: (res?.teams[0].strTeamBadge)!))
+                    DispatchQueue.main.async {
+                        
+                        self.TeamBadgeImageView.kf.setImage(with: URL(string: (res?.teams[0].strTeamBadge)!))
+                    }
+                }
+                else {
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.CoverImageView.kf.setImage(with:URL(string: (res?.teams[0].strTeamFanart1 ?? "NO Image")))
+                        self.TeamBadgeImageView.kf.setImage(with: URL(string: (res?.teams[0].strTeamBadge)!))
+                    }
+                    
                 }
                 
-                self.TeamTitleLabel.text = res?.teams[0].strTeam
+                self.TeamTitleLabel.text = res?.teams[0].strTeam.localizedUppercase
                 self.StadiumLabel.text = res?.teams[0].strStadium
                 self.LeagueNameLabel.text = res?.teams[0].strLeague
                 self.DetailsTextArea.text = res?.teams[0].strDescriptionEN
@@ -69,5 +87,44 @@ class TeamDetailsViewController: UIViewController {
     @IBAction func BTNDismiss (_ sender:Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func BTNFaceBook(_ sender:Any) {
+        print("FL: \(self.LinkFaceBook)")
+        
+        CheckLinkAndViewIt(url: self.LinkFaceBook)
+    }
+    
+    @IBAction func BTNTwitter(_ sender:Any) {
+        print("FL: \(self.LinkTwitter)")
+       
+        CheckLinkAndViewIt(url: self.LinkTwitter)
+    }
+    
+    @IBAction func BTNInstegram(_ sender:Any) {
+        print("FL: \(self.LinkIntegram)")
+        
+        CheckLinkAndViewIt(url: self.LinkIntegram)
+    }
    
+    public func openSafari(Url: String) {
+        let u = "HTTPS://\(Url)"
+        let safariVC = SFSafariViewController(url: URL(string: u)!)
+        self.present(safariVC, animated: true)
+    }
+    
+    public func createAlert (Title:String , Mess:String , ob:UIViewController) {
+        let alert = UIAlertController(title: Title , message:Mess
+            , preferredStyle:UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title:"OK",style:UIAlertAction.Style.default,handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        ob.present(alert,animated:true,completion: nil)
+    }
+    
+    func CheckLinkAndViewIt(url: String) {
+       if url == "" || url == "nil" {
+           createAlert(Title: "Attension", Mess: "There is no link to show to you", ob: self)
+       }
+       else {
+           openSafari(Url: url)
+       }
+   }
 }

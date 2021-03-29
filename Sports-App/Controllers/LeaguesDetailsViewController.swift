@@ -143,7 +143,7 @@ class LeaguesDetailsViewController: UIViewController {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let next = story.instantiateViewController(withIdentifier: "YoutubeViewViewController") as! YoutubeViewViewController
         next.youtubeLink = self.LinkYoutube
-        next.modalPresentationStyle = .fullScreen
+        //next.modalPresentationStyle = .fullScreen
         self.present(next, animated: true, completion: nil)
     }
 }
