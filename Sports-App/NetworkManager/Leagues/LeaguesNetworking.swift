@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Alamofire
 
 enum LeaguesNetworking {
     
     case getAllLeagues
+    case getLeagueDetails(id: String)
     
 }
 
@@ -25,6 +27,8 @@ extension LeaguesNetworking: TargetType {
         
         case .getAllLeagues:
             return AllLeaguesURL
+        case .getLeagueDetails:
+            return getDetailsLeagueURL
         }
         
     }
@@ -39,6 +43,11 @@ extension LeaguesNetworking: TargetType {
         
         case .getAllLeagues:
             return .requestPlain
+        
+        case .getLeagueDetails(id: let id):
+            let parameters = ["id": id] as [String: Any]
+            
+            return .requestParameters(parameters: parameters, encoding: URLEncoding(destination: .queryString))
         }
         
     }

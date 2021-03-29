@@ -1,5 +1,5 @@
 //
-//  LeaguesResponse.swift
+//  AllTeamsResponse.swift
 //  Sports-App
 //
 //  Created by Mohamed Ali on 3/28/21.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-class LeaguesResponse: Codable {
-    var leagues: [LeaguesModel]
+class AllTeamsResponse: Codable {
+    var teams: [AllTemasModel]
     
     enum CodingKeys: String,CodingKey {
-        case leagues
+        case teams
     }
 }

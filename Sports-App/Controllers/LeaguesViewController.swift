@@ -63,6 +63,16 @@ class LeaguesViewController: UIViewController {
 
 extension LeaguesViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let next  = story.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeaguesDetailsViewController
+        next.PickedLeagueID = self.LeaguesArr[indexPath.row].LeagueID
+        next.modalPresentationStyle = .fullScreen
+        self.present(next, animated: true, completion: nil)
+        
+    }
+    
 }
 
 extension LeaguesViewController: UITableViewDataSource {

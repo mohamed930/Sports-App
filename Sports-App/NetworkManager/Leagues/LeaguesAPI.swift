@@ -21,4 +21,14 @@ class LeaguesAPI: BaseAPI<LeaguesNetworking> {
         
     }
     
+    func GetLeagueDetails (id: String,completion: @escaping (Result<LeaguesDetailsResponse?,NSError>) -> Void) {
+        
+        RappleActivityIndicatorView.startAnimatingWithLabel("Please wait", attributes: RappleModernAttributes)
+        
+        self.fetchData(Target: .getLeagueDetails(id: id), ClassName: LeaguesDetailsResponse.self) { (response) in
+            completion(response)
+        }
+        
+    }
+    
 }
