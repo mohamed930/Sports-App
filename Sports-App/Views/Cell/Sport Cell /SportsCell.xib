@@ -49,7 +49,6 @@
                 <constraint firstItem="mBR-B4-61B" firstAttribute="top" secondItem="dkt-Pv-i7Z" secondAttribute="bottom" constant="17" id="HRp-ab-Vza"/>
                 <constraint firstItem="dkt-Pv-i7Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="emX-lL-jmb"/>
                 <constraint firstItem="dkt-Pv-i7Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="jMr-mi-XR5"/>
-                <constraint firstAttribute="trailing" secondItem="dkt-Pv-i7Z" secondAttribute="trailing" constant="29" id="qT6-8h-NCY"/>
             </constraints>
             <connections>
                 <outlet property="ContianerView" destination="dkt-Pv-i7Z" id="5nv-8Z-Bez"/>

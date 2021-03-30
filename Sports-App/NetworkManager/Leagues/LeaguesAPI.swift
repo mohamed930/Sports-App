@@ -8,8 +8,13 @@
 import Foundation
 import RappleProgressHUD
 
+protocol LeaguesAPIProtcol {
+    func GetAllLeagues (completion: @escaping (Result<LeaguesResponse?,NSError>) -> Void)
+    func GetLeagueDetails (id: String,completion: @escaping (Result<LeaguesDetailsResponse?,NSError>) -> Void)
+}
 
-class LeaguesAPI: BaseAPI<LeaguesNetworking> {
+
+class LeaguesAPI: BaseAPI<LeaguesNetworking>, LeaguesAPIProtcol {
     
     func GetAllLeagues (completion: @escaping (Result<LeaguesResponse?,NSError>) -> Void) {
         

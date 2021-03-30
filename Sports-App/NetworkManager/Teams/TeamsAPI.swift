@@ -8,7 +8,12 @@
 import Foundation
 import RappleProgressHUD
 
-class TeamsAPI: BaseAPI<TeamsNetworking> {
+protocol TeamsAPIProtocol  {
+    func GetAllTeams (LeagueName: String,completion: @escaping (Result<AllTeamsResponse?,NSError>) -> Void)
+    func GetTeamDetials (TeamID: String , completion: @escaping (Result<AllTeamsResponse?,NSError>) -> Void)
+}
+
+class TeamsAPI: BaseAPI<TeamsNetworking>, TeamsAPIProtocol {
     
     func GetAllTeams (LeagueName: String,completion: @escaping (Result<AllTeamsResponse?,NSError>) -> Void) {
         

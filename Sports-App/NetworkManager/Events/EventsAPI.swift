@@ -7,7 +7,11 @@
 
 import Foundation
 
-class EventsAPI: BaseAPI<EventssNetworking> {
+protocol EvetnsAPIprotocol {
+    func GetAllEvents (id:String,completion: @escaping (Result<EventsResponse?,NSError>) -> Void)
+}
+
+class EventsAPI: BaseAPI<EventssNetworking>,EvetnsAPIprotocol {
     
     func GetAllEvents (id:String,completion: @escaping (Result<EventsResponse?,NSError>) -> Void) {
         
