@@ -20,18 +20,61 @@
         <!--Favourtis-->
         <scene sceneID="LJe-tS-zkl">
             <objects>
-                <viewController id="5mV-eg-Xth" sceneMemberID="viewController">
+                <viewController id="5mV-eg-Xth" customClass="FavouriteViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJh-JX-Ewz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjn-0h-j8e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wum-lV-Jfn">
+                                        <rect key="frame" x="126" y="44" width="123" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ZQG-cS-aXI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="wei-Rn-6ej"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="4Qd-sp-aEx"/>
+                                    <constraint firstItem="wum-lV-Jfn" firstAttribute="top" secondItem="hjn-0h-j8e" secondAttribute="top" constant="44" id="9Gd-7O-zca"/>
+                                    <constraint firstItem="wum-lV-Jfn" firstAttribute="centerX" secondItem="hjn-0h-j8e" secondAttribute="centerX" id="akj-rx-n1x"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-bc-mmi">
+                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5mV-eg-Xth" id="QeE-bK-zZh"/>
+                                    <outlet property="delegate" destination="5mV-eg-Xth" id="xhd-3S-Lph"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fnu-9I-jWd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hjn-0h-j8e" firstAttribute="top" secondItem="eJh-JX-Ewz" secondAttribute="top" id="CaY-hv-Zs3"/>
+                            <constraint firstItem="Q9Y-bc-mmi" firstAttribute="leading" secondItem="fnu-9I-jWd" secondAttribute="leading" id="MtU-uR-UJh"/>
+                            <constraint firstItem="Q9Y-bc-mmi" firstAttribute="bottom" secondItem="fnu-9I-jWd" secondAttribute="bottom" id="Qyj-mc-p6b"/>
+                            <constraint firstItem="fnu-9I-jWd" firstAttribute="trailing" secondItem="Q9Y-bc-mmi" secondAttribute="trailing" id="S0i-0e-h2W"/>
+                            <constraint firstItem="Q9Y-bc-mmi" firstAttribute="top" secondItem="hjn-0h-j8e" secondAttribute="bottom" constant="8" symbolic="YES" id="bGt-j1-nQS"/>
+                            <constraint firstItem="fnu-9I-jWd" firstAttribute="trailing" secondItem="hjn-0h-j8e" secondAttribute="trailing" id="q2z-qD-l6b"/>
+                            <constraint firstItem="hjn-0h-j8e" firstAttribute="leading" secondItem="fnu-9I-jWd" secondAttribute="leading" id="xPX-uw-UJ7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favourtis" image="LoveButton" id="sgN-r7-ReF"/>
+                    <connections>
+                        <outlet property="tableView" destination="Q9Y-bc-mmi" id="hry-V1-gIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0d-FB-93W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="212"/>
+            <point key="canvasLocation" x="269.60000000000002" y="211.33004926108376"/>
         </scene>
         <!--Sports-->
         <scene sceneID="iBP-0g-A1q">
@@ -246,11 +289,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-mt-omi" customClass="CustomUILabel" customModule="Sports_App" customModuleProvider="target">
-                                <rect key="frame" x="8" y="97" width="144" height="21"/>
+                                <rect key="frame" x="8" y="97" width="351" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="d9n-S1-Fvg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -274,7 +317,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pga-8u-Pi8">
-                                <rect key="frame" x="5" y="228" width="364" height="433"/>
+                                <rect key="frame" x="5" y="228" width="364" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TUU-B3-Gol">
                                     <size key="itemSize" width="128" height="128"/>
@@ -307,8 +350,8 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams in a English Premier League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5W-Qe-Yop">
-                                <rect key="frame" x="5" y="677" width="364" height="15"/>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <rect key="frame" x="5" y="670" width="364" height="22"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -328,7 +371,7 @@
                             <constraint firstItem="aSV-L8-TcC" firstAttribute="bottom" secondItem="TJo-aE-2Rs" secondAttribute="bottom" id="b2i-L6-HU6"/>
                             <constraint firstItem="B5W-Qe-Yop" firstAttribute="leading" secondItem="Pga-8u-Pi8" secondAttribute="leading" id="bve-Yn-Z02"/>
                             <constraint firstItem="3ys-mt-NrL" firstAttribute="top" secondItem="5pd-OP-iBG" secondAttribute="top" id="chd-hV-K7n"/>
-                            <constraint firstItem="TJo-aE-2Rs" firstAttribute="trailing" secondItem="l2J-mt-omi" secondAttribute="trailing" constant="223" id="gN8-cb-lSq"/>
+                            <constraint firstItem="TJo-aE-2Rs" firstAttribute="trailing" secondItem="l2J-mt-omi" secondAttribute="trailing" constant="16" id="gN8-cb-lSq"/>
                             <constraint firstItem="B5W-Qe-Yop" firstAttribute="top" secondItem="Pga-8u-Pi8" secondAttribute="bottom" constant="16" id="gz7-30-Hce"/>
                             <constraint firstItem="3ys-mt-NrL" firstAttribute="leading" secondItem="TJo-aE-2Rs" secondAttribute="leading" id="mpT-eo-E69"/>
                             <constraint firstItem="frk-Xq-ApW" firstAttribute="trailing" secondItem="3ys-mt-NrL" secondAttribute="trailing" id="nRV-FQ-5Jf"/>
@@ -341,6 +384,7 @@
                         <outlet property="EventsCV" destination="Pga-8u-Pi8" id="QrT-ID-bCG"/>
                         <outlet property="LeagueLogo" destination="DPx-rd-XGV" id="hFF-aW-Isf"/>
                         <outlet property="LeagueTitleLabel" destination="Dgv-VH-Vt0" id="rmC-aG-7pC"/>
+                        <outlet property="LoveButton" destination="XHp-Sb-MYL" id="NSs-ct-BcS"/>
                         <outlet property="TeamsCV" destination="aSV-L8-TcC" id="SLz-g2-gkT"/>
                         <outlet property="UpcommingCV" destination="frk-Xq-ApW" id="EVQ-qI-vsL"/>
                     </connections>
@@ -440,7 +484,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Villa Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQe-1E-Y55">
-                                <rect key="frame" x="159" y="233" width="84" height="23"/>
+                                <rect key="frame" x="159" y="233.33333333333334" width="83.666666666666686" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

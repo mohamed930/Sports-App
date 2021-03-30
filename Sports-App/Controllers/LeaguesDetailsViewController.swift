@@ -8,6 +8,7 @@
 import UIKit
 import RappleProgressHUD
 import Kingfisher
+import CoreData
 
 class LeaguesDetailsViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class LeaguesDetailsViewController: UIViewController {
     @IBOutlet weak var UpcommingCV: UICollectionView!
     @IBOutlet weak var EventsCV: UICollectionView!
     @IBOutlet weak var TeamsCV: UICollectionView!
+    @IBOutlet weak var LoveButton: UIButton!
     
     // MARK:- TODO:- Intialise New Varibles HERE:-
     var PickedLeagueID = String()
@@ -23,6 +25,9 @@ class LeaguesDetailsViewController: UIViewController {
     var UpcommingEventsArr = Array<UpcommingEventsViewModel>()
     var ResultEvetnsArr = Array<LastEventsViewModel>()
     var AllTeamsArr = Array<AllTeamsViewModel>()
+    var LovedFav = [NSManagedObject]()
+    var currentIdex = 0
+    var isInFav = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,7 @@ class LeaguesDetailsViewController: UIViewController {
         TeamsCV.register(UINib(nibName: "TeamsCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
         print("lid: \(self.PickedLeagueID)")
+        LoadLove()
         GetLeagueDetails()
         //GetUpcommingEvents()
         
@@ -43,6 +49,16 @@ class LeaguesDetailsViewController: UIViewController {
     
     @IBAction func BTNLove (_ sender:Any) {
         
+        if isInFav == false {
+            
+            // MARK:- TODO:- Add League to CoreDate.
+            AddData()
+        }
+        else if isInFav == true {
+            
+            // MARK:- TODO:- Delete League from CoreData.
+            DeleteData()
+        }
     }
     
     func GetLeagueDetails () {
@@ -136,6 +152,63 @@ class LeaguesDetailsViewController: UIViewController {
         }
         
     }
+    
+    // MARK:- TODO:- CoreData Methods:-
+    // --------------------------------------------
+    func LoadLove () {
+        
+         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Leagues")
+         do {
+            LovedFav = try context.fetch(fetchRequest)
+         } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+         }
+        
+        var count = 0
+        for i in LovedFav {
+            if i.value(forKeyPath: "leagueid") as? String == self.PickedLeagueID {
+                self.LoveButton.setBackgroundImage(UIImage(named: "heart_red"), for: .normal)
+                self.currentIdex = count
+                self.isInFav = true
+                break
+            }
+            count += 1
+        }
+        
+    }
+    
+    func AddData () {
+        let entity = NSEntityDescription.entity(forEntityName: "Leagues", in: context)!
+        let league = NSManagedObject(entity: entity,insertInto: context)
+        
+        league.setValue(self.PickedLeagueID , forKeyPath: "leagueid")
+        league.setValue(self.LeagueTitleLabel.text! , forKeyPath: "leaguetitle")
+        
+        do {
+            try context.save()
+            print("Added Successfully!")
+            self.LoadLove()
+            self.LoveButton.setBackgroundImage(UIImage(named: "heart_red"), for: .normal)
+        } catch let error as NSError {
+           print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func DeleteData () {
+        
+        context.delete(LovedFav[self.currentIdex] as NSManagedObject)
+        
+        do {
+            try context.save()
+            print("Deleted Successfully!")
+            self.isInFav = false
+            LoveButton.setBackgroundImage(UIImage(named: "BTNLove"), for: .normal)
+        } catch let error as NSError {
+           print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    // --------------------------------------------
     
     @objc func gotoLink(tapGestureRecognizer: UITapGestureRecognizer) {
 //        print("Link Youtube: \(self.LinkYoutube)")

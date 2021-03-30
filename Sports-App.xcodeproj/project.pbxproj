@@ -46,6 +46,7 @@
 		D91BD0C4261074530004D015 /* UpcommingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91BD0C2261074530004D015 /* UpcommingCell.xib */; };
 		D91BD0CC2610785C0004D015 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BD0CA2610785C0004D015 /* ResultCell.swift */; };
 		D91BD0CD2610785C0004D015 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91BD0CB2610785C0004D015 /* ResultCell.xib */; };
+		D96090592613D2CA001320DA /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96090582613D2CA001320DA /* FavouriteViewController.swift */; };
 		D9DE28012611678800B5EC3F /* LastEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28002611678800B5EC3F /* LastEventsViewModel.swift */; };
 		D9DE28052611712F00B5EC3F /* AllTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */; };
 		D9DE28092611881800B5EC3F /* YoutubeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28082611881800B5EC3F /* YoutubeViewViewController.swift */; };
@@ -122,6 +123,7 @@
 		D91BD0CA2610785C0004D015 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		D91BD0CB2610785C0004D015 /* ResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
 		D91BD0D0261079400004D015 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		D96090582613D2CA001320DA /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		D9DE28002611678800B5EC3F /* LastEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastEventsViewModel.swift; sourceTree = "<group>"; };
 		D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsViewModel.swift; sourceTree = "<group>"; };
 		D9DE28082611881800B5EC3F /* YoutubeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D917C4A0260FC470002A6F21 /* HomeViewControllers.swift */,
+				D96090582613D2CA001320DA /* FavouriteViewController.swift */,
 				D91BD08B26105D030004D015 /* LeaguesViewController.swift */,
 				D91BD0B826106E470004D015 /* LeaguesDetailsViewController.swift */,
 				D9DE28082611881800B5EC3F /* YoutubeViewViewController.swift */,
@@ -671,6 +674,7 @@
 				D9F55CC326100CBB00B03552 /* SportsAPI.swift in Sources */,
 				D9126F3E261113E9000C2EA7 /* EventsModel.swift in Sources */,
 				D9F55CAD26100A0600B03552 /* TargetType.swift in Sources */,
+				D96090592613D2CA001320DA /* FavouriteViewController.swift in Sources */,
 				D9DE280D26119BFE00B5EC3F /* TeamDetailsViewController.swift in Sources */,
 				D9F55CD52610129D00B03552 /* SportsViewModel.swift in Sources */,
 				D91BD0B5261068730004D015 /* LeaguesViewModel.swift in Sources */,
