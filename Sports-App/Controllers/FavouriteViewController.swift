@@ -21,16 +21,27 @@ class FavouriteViewController: UIViewController {
         tableView.register(UINib(nibName: "LeagueCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         LoadLove()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveTestNotification), name: NSNotification.Name(rawValue: "Added"), object: nil)
     }
     
     func LoadLove () {
         
+        self.LovedFav.removeAll()
+        
+        print("Received Successfully!")
+        
          let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Leagues")
          do {
             LovedFav = try context.fetch(fetchRequest)
+            self.tableView.reloadData()
          } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
          }
+    }
+    
+    @objc func receiveTestNotification() {
+        LoadLove()
     }
 
 }

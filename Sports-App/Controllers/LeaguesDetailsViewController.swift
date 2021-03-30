@@ -189,6 +189,7 @@ class LeaguesDetailsViewController: UIViewController {
             print("Added Successfully!")
             self.LoadLove()
             self.LoveButton.setBackgroundImage(UIImage(named: "heart_red"), for: .normal)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Added"), object: self)
         } catch let error as NSError {
            print("Could not save. \(error), \(error.userInfo)")
         }
@@ -203,6 +204,7 @@ class LeaguesDetailsViewController: UIViewController {
             print("Deleted Successfully!")
             self.isInFav = false
             LoveButton.setBackgroundImage(UIImage(named: "BTNLove"), for: .normal)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Added"), object: self)
         } catch let error as NSError {
            print("Could not save. \(error), \(error.userInfo)")
         }
