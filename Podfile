@@ -10,6 +10,7 @@ target 'Sports-App' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'IQKeyboardManagerSwift'
+  pod 'ReachabilitySwift'
 
   target 'Sports-AppTests' do
     inherit! :search_paths

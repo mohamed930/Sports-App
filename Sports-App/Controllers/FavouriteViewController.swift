@@ -7,18 +7,37 @@
 
 import UIKit
 import CoreData
+import Reachability
 
 class FavouriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK:- TODO:- Insialise new varibles Here:-
     var LovedFav = [NSManagedObject]()
     var isConnectionAvaliable = true
+    let reachability = try! Reachability()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "LeagueCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        reachability.whenReachable = { reachability in
+            
+            if reachability.connection == .wifi || reachability.connection == .cellular {
+                self.isConnectionAvaliable = true
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            self.isConnectionAvaliable = false
+        }
+
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
         
         LoadLove()
         

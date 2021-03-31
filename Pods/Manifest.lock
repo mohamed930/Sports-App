@@ -3,12 +3,14 @@ PODS:
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (6.2.1)
   - RappleProgressHUD (4.1)
+  - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - Kingfisher
   - RappleProgressHUD
+  - ReachabilitySwift
 
 SPEC REPOS:
   trunk:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - RappleProgressHUD
+    - ReachabilitySwift
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: e18e688d368d19ffee47ac7d6f86ed4889c6760e
+PODFILE CHECKSUM: e2184d0075a0863f4da728a0c33355f46fcb06f0
 
 COCOAPODS: 1.10.1
