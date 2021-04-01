@@ -198,10 +198,34 @@
                                             <action selector="BTNBack:" destination="vry-0v-7jX" eventType="touchUpInside" id="QwS-9d-Ki4"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-WG-VJf">
-                                        <rect key="frame" x="149.66666666666666" y="44" width="76" height="32"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-rx-DD7">
+                                        <rect key="frame" x="367" y="44" width="0.0" height="34"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="A5T-Yh-kDV"/>
+                                            <constraint firstAttribute="width" id="2Rb-GR-8jD"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vry-0v-7jX" id="fJu-uI-N43"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRd-Ti-Qoo">
+                                        <rect key="frame" x="343" y="52" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="NXA-cz-dlK"/>
+                                            <constraint firstAttribute="height" constant="16" id="qvx-Hb-NLR"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Search"/>
+                                        <connections>
+                                            <action selector="BTNSearch:" destination="vry-0v-7jX" eventType="touchUpInside" id="gdu-eE-OYG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-WG-VJf">
+                                        <rect key="frame" x="160" y="44" width="55.333333333333343" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55.329999999999998" id="Drc-ZJ-1Nw"/>
                                             <constraint firstAttribute="height" constant="32" id="XL4-lY-PSh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
@@ -212,9 +236,14 @@
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dDD-mi-Alw" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="51" id="4Fw-bL-dPb"/>
+                                    <constraint firstItem="Hx4-rx-DD7" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="44" id="4Kk-TY-cXB"/>
+                                    <constraint firstItem="Hx4-rx-DD7" firstAttribute="leading" secondItem="b7t-WG-VJf" secondAttribute="trailing" constant="151.66999999999999" id="7d6-Ye-27G"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hx4-rx-DD7" secondAttribute="trailing" constant="8" id="IEg-Wb-sRT"/>
                                     <constraint firstItem="dDD-mi-Alw" firstAttribute="leading" secondItem="eOf-rF-ivi" secondAttribute="leading" constant="26" id="OGo-5J-GR4"/>
-                                    <constraint firstItem="b7t-WG-VJf" firstAttribute="centerX" secondItem="eOf-rF-ivi" secondAttribute="centerX" id="a2J-Vo-gA8"/>
+                                    <constraint firstAttribute="trailing" secondItem="zRd-Ti-Qoo" secondAttribute="trailing" constant="16" id="RcM-Wb-4Ca"/>
+                                    <constraint firstItem="zRd-Ti-Qoo" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="52" id="TEy-Kf-G58"/>
                                     <constraint firstAttribute="height" constant="83" id="tA2-eH-Qt1"/>
+                                    <constraint firstItem="b7t-WG-VJf" firstAttribute="leading" secondItem="dDD-mi-Alw" secondAttribute="trailing" constant="124" id="xgT-Mi-iHt"/>
                                     <constraint firstItem="b7t-WG-VJf" firstAttribute="top" secondItem="eOf-rF-ivi" secondAttribute="top" constant="44" id="xsF-Ao-uE6"/>
                                 </constraints>
                             </view>
@@ -240,6 +269,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ContainerView" destination="eOf-rF-ivi" id="GRv-DS-GOB"/>
+                        <outlet property="LeaguesLeading" destination="xgT-Mi-iHt" id="Oyv-UI-ZVf"/>
+                        <outlet property="LeaguesTrailing" destination="7d6-Ye-27G" id="9aW-bU-cnX"/>
+                        <outlet property="SearchTextField" destination="Hx4-rx-DD7" id="URe-Vs-kD2"/>
+                        <outlet property="TextFieldWidth" destination="2Rb-GR-8jD" id="iYu-ef-v6n"/>
                         <outlet property="tableView" destination="dSv-rV-cL7" id="YAV-pS-GDc"/>
                     </connections>
                 </viewController>
