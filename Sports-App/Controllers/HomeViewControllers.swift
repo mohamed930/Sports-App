@@ -8,6 +8,7 @@
 import UIKit
 import RappleProgressHUD
 import Kingfisher
+import Reachability
 
 class HomeViewControllers: UIViewController {
     
@@ -15,13 +16,23 @@ class HomeViewControllers: UIViewController {
     
     // MARK:- TODO:- Insialise New Varibles Here:-
     var SportsArr = Array<SportsViewModel>()
+    let reachability = try! Reachability()
+    var timer: Timer?
+    var timerCount: Int = 15
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(UINib(nibName: "SportsCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
-        GetSportsData()
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do{
+          try reachability.startNotifier()
+        }catch{
+          print("could not start reachability notifier")
+        }
+        
+        
         
     }
     
@@ -57,6 +68,66 @@ class HomeViewControllers: UIViewController {
             
         }
         
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+
+      let reachability = note.object as! Reachability
+
+      switch reachability.connection {
+      case .wifi:
+            GetSportsData()
+            reachability.stopNotifier()
+            NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+      case .cellular:
+            GetSportsData()
+            reachability.stopNotifier()
+            NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+      case .unavailable:
+        print("Network not reachable")
+        showAlertView()
+        
+      case .none:
+        print("None")
+      }
+    }
+    
+    func showAlertView() {
+        let alertController = UIAlertController(title: "Attentio", message: "you are offline try reconnect", preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "Try again", style: .default) { (alert) in
+            do{
+                NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(note:)), name: .reachabilityChanged, object: self.reachability)
+                try self.reachability.startNotifier()
+            }catch{
+              print("could not start reachability notifier")
+            }
+        }
+        
+        okAction.isEnabled = false
+
+        alertController.addAction(okAction)
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true) {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDownTimer), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func countDownTimer() {
+        timerCount -= 1
+
+        let alertController = presentedViewController as! UIAlertController
+        let okAction = alertController.actions.first
+
+        if timerCount == 0 {
+            timer?.invalidate()
+            timer = nil
+
+            okAction?.setValue("Ok", forKey: "title")
+            okAction?.isEnabled = true
+        } else {
+            okAction?.setValue("Ok (\(timerCount))", forKey: "title")
+        }
     }
 }
 

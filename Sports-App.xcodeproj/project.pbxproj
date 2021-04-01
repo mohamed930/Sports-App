@@ -51,6 +51,9 @@
 		D9DE28052611712F00B5EC3F /* AllTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */; };
 		D9DE28092611881800B5EC3F /* YoutubeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28082611881800B5EC3F /* YoutubeViewViewController.swift */; };
 		D9DE280D26119BFE00B5EC3F /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE280C26119BFE00B5EC3F /* TeamDetailsViewController.swift */; };
+		D9E3757E2615A8BA0028E61A /* WelcomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3757C2615A8BA0028E61A /* WelcomCell.swift */; };
+		D9E3757F2615A8BA0028E61A /* WelcomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9E3757D2615A8BA0028E61A /* WelcomCell.xib */; };
+		D9E375832615AA2B0028E61A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E375822615AA2B0028E61A /* WelcomeViewController.swift */; };
 		D9F55C922610030C00B03552 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55C912610030C00B03552 /* UIColor.swift */; };
 		D9F55CA52610090D00B03552 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CA42610090D00B03552 /* BaseURL.swift */; };
 		D9F55CA9261009C200B03552 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55CA8261009C200B03552 /* BaseAPI.swift */; };
@@ -128,6 +131,9 @@
 		D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsViewModel.swift; sourceTree = "<group>"; };
 		D9DE28082611881800B5EC3F /* YoutubeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewViewController.swift; sourceTree = "<group>"; };
 		D9DE280C26119BFE00B5EC3F /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
+		D9E3757C2615A8BA0028E61A /* WelcomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomCell.swift; sourceTree = "<group>"; };
+		D9E3757D2615A8BA0028E61A /* WelcomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomCell.xib; sourceTree = "<group>"; };
+		D9E375822615AA2B0028E61A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D9F55C912610030C00B03552 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D9F55C9C261004F000B03552 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		D9F55C9F261006AB00B03552 /* American Typewriter Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "American Typewriter Regular.ttf"; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 		D917C4B8260FC4C9002A6F21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9E375822615AA2B0028E61A /* WelcomeViewController.swift */,
 				D917C4A0260FC470002A6F21 /* HomeViewControllers.swift */,
 				D96090582613D2CA001320DA /* FavouriteViewController.swift */,
 				D91BD08B26105D030004D015 /* LeaguesViewController.swift */,
@@ -321,6 +328,7 @@
 		D917C4E5260FCCD6002A6F21 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D9E3757B2615A8990028E61A /* Welcome Cell */,
 				D9126F19261105F1000C2EA7 /* Teams Cell */,
 				D91BD0C7261078250004D015 /* Results Cell */,
 				D91BD0C0261074220004D015 /* Upcomming Cell */,
@@ -384,6 +392,15 @@
 				D91BD0CB2610785C0004D015 /* ResultCell.xib */,
 			);
 			path = "Results Cell";
+			sourceTree = "<group>";
+		};
+		D9E3757B2615A8990028E61A /* Welcome Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3757C2615A8BA0028E61A /* WelcomCell.swift */,
+				D9E3757D2615A8BA0028E61A /* WelcomCell.xib */,
+			);
+			path = "Welcome Cell";
 			sourceTree = "<group>";
 		};
 		D9F55C90261002F300B03552 /* Custome + Extenstion */ = {
@@ -568,6 +585,7 @@
 				D917C4A9260FC471002A6F21 /* Assets.xcassets in Resources */,
 				D917C4E9260FCCF2002A6F21 /* SportsCell.xib in Resources */,
 				D917C4A4260FC470002A6F21 /* Main.storyboard in Resources */,
+				D9E3757F2615A8BA0028E61A /* WelcomCell.xib in Resources */,
 				D91BD09B261062350004D015 /* LeagueCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +673,7 @@
 				D91BD08C26105D030004D015 /* LeaguesViewController.swift in Sources */,
 				D9126F4F26111824000C2EA7 /* AllTeamsResponse.swift in Sources */,
 				D917C4A1260FC470002A6F21 /* HomeViewControllers.swift in Sources */,
+				D9E375832615AA2B0028E61A /* WelcomeViewController.swift in Sources */,
 				D91BD0A0261064F80004D015 /* LeaguesNetworking.swift in Sources */,
 				D917C49D260FC470002A6F21 /* AppDelegate.swift in Sources */,
 				D9126F3926111335000C2EA7 /* EventsResponse.swift in Sources */,
@@ -694,6 +713,7 @@
 				D9F55C922610030C00B03552 /* UIColor.swift in Sources */,
 				D9F55CA9261009C200B03552 /* BaseAPI.swift in Sources */,
 				D9DE28092611881800B5EC3F /* YoutubeViewViewController.swift in Sources */,
+				D9E3757E2615A8BA0028E61A /* WelcomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
