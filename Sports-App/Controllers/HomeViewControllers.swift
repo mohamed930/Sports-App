@@ -16,12 +16,26 @@ class HomeViewControllers: UIViewController {
     
     // MARK:- TODO:- Insialise New Varibles Here:-
     var SportsArr = Array<SportsViewModel>()
+    var FiletedSportsArr = Array<SportsViewModel>()
     let reachability = try! Reachability()
+    @IBOutlet weak var SearchWidth: NSLayoutConstraint!
+    @IBOutlet weak var SportsLeading: NSLayoutConstraint!
+    @IBOutlet weak var SearchTextField: UITextField!
+    @IBOutlet weak var SportsTrailing: NSLayoutConstraint!
+    @IBOutlet weak var ContainerView: UIView!
     var timer: Timer?
     var timerCount: Int = 15
+    var filtered = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var tab = UITapGestureRecognizer()
+//        tab = UITapGestureRecognizer(target: self, action: #selector(self.DismissKeyBad(tapGestureRecognizer:)))
+//        tab.numberOfTapsRequired = 1
+//        tab.numberOfTouchesRequired = 1
+//        self.collectionView.isUserInteractionEnabled = true
+//        self.collectionView.addGestureRecognizer(tab)
         
         collectionView.register(UINib(nibName: "SportsCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
@@ -32,7 +46,22 @@ class HomeViewControllers: UIViewController {
           print("could not start reachability notifier")
         }
         
+    }
+    
+    @IBAction func BTNSearch (_ sender:Any) {
         
+        if SearchWidth.constant == 0 {
+            UIView.animate(withDuration: 0.7) {
+                self.SearchWidth.constant = (self.ContainerView.layer.frame.width) - 40
+                self.SportsLeading.constant = 30
+                self.SportsTrailing.constant = 10
+                self.PlaceHolder(textField: self.SearchTextField, PlaceHolder: "Enter Sport name", Color: UIColor.white)
+                self.view.layoutIfNeeded()
+            }
+        }
+        else {
+            print("Search is Done!")
+        }
         
     }
     
@@ -129,22 +158,60 @@ class HomeViewControllers: UIViewController {
             okAction?.setValue("Ok (\(timerCount))", forKey: "title")
         }
     }
+    
+    func PlaceHolder (textField:UITextField,PlaceHolder:String , Color:UIColor) {
+        textField.attributedPlaceholder = NSAttributedString(string: PlaceHolder,
+                attributes: [NSAttributedString.Key.foregroundColor: Color])
+    }
+    
+     func DismissKeyPad() {
+        self.view.endEditing(true)
+        
+        UIView.animate(withDuration: 0.7) {
+            self.SearchWidth.constant = 0
+            self.SportsLeading.constant = 166
+            self.SportsTrailing.constant = 151.67
+            //self.PlaceHolder(textField: self.SearchTextField, PlaceHolder: "Enter Sport name", Color: UIColor.white)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        DismissKeyPad()
+    }
+    
+//    @objc func DismissKeyBad (tapGestureRecognizer: UITapGestureRecognizer) {
+//        DismissKeyPad()
+//    }
 }
 
 extension HomeViewControllers: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return SportsArr.count
+        
+        if !FiletedSportsArr.isEmpty {
+            return FiletedSportsArr.count
+        }
+        return filtered ? 0 : SportsArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: SportsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SportsCell
         
-        cell.SportNameLabel.text = SportsArr[indexPath.row].sportName
-        DispatchQueue.main.async {
-            cell.SportImageView.kf.setImage(with:URL(string: self.SportsArr[indexPath.row].SportThumbnail))
-            
+        if !FiletedSportsArr.isEmpty {
+            cell.SportNameLabel.text = FiletedSportsArr[indexPath.row].sportName
+            DispatchQueue.main.async {
+                cell.SportImageView.kf.setImage(with:URL(string: self.FiletedSportsArr[indexPath.row].SportThumbnail))
+                
+            }
+        }
+        else {
+            cell.SportNameLabel.text = SportsArr[indexPath.row].sportName
+            DispatchQueue.main.async {
+                cell.SportImageView.kf.setImage(with:URL(string: self.SportsArr[indexPath.row].SportThumbnail))
+                
+            }
         }
         
         return cell
@@ -161,7 +228,14 @@ extension HomeViewControllers: UICollectionViewDelegate {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let next = story.instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
         
-        next.PickedSportName = self.SportsArr[indexPath.row].sportName
+        if !FiletedSportsArr.isEmpty {
+            next.PickedSportName = self.FiletedSportsArr[indexPath.row].sportName
+        }
+        else {
+            next.PickedSportName = self.SportsArr[indexPath.row].sportName
+        }
+        
+        
         next.modalPresentationStyle = .fullScreen
         
         self.present(next, animated: true, completion: nil)
@@ -179,4 +253,40 @@ extension HomeViewControllers: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: cell_width, height: 165)
     }
+}
+
+extension HomeViewControllers: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.DismissKeyPad()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let text = textField.text {
+            
+            if string.count == 0 {
+                filterText(String(text.dropLast()))
+            }
+            else {
+                filterText(text+string)
+            }
+        }
+        
+        return true
+    }
+    
+    func filterText (_ query: String) {
+        FiletedSportsArr.removeAll()
+        
+        for string in SportsArr {
+            if string.sportName.lowercased().starts(with: query.lowercased()) {
+                FiletedSportsArr.append(string)
+            }
+        }
+        self.collectionView.reloadData()
+        filtered = true
+    }
+    
 }
