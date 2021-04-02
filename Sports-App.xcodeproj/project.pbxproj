@@ -46,6 +46,9 @@
 		D91BD0C4261074530004D015 /* UpcommingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91BD0C2261074530004D015 /* UpcommingCell.xib */; };
 		D91BD0CC2610785C0004D015 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BD0CA2610785C0004D015 /* ResultCell.swift */; };
 		D91BD0CD2610785C0004D015 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91BD0CB2610785C0004D015 /* ResultCell.xib */; };
+		D94D4FF52616A19D0070EFFB /* GifReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D4FF42616A19D0070EFFB /* GifReader.swift */; };
+		D94D4FF92616A1F90070EFFB /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D4FF82616A1F90070EFFB /* LaunchScreenViewController.swift */; };
+		D94D50092616A9160070EFFB /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = D94D50082616A9160070EFFB /* launch.gif */; };
 		D96090592613D2CA001320DA /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96090582613D2CA001320DA /* FavouriteViewController.swift */; };
 		D9DE28012611678800B5EC3F /* LastEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28002611678800B5EC3F /* LastEventsViewModel.swift */; };
 		D9DE28052611712F00B5EC3F /* AllTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */; };
@@ -126,6 +129,9 @@
 		D91BD0CA2610785C0004D015 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		D91BD0CB2610785C0004D015 /* ResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
 		D91BD0D0261079400004D015 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		D94D4FF42616A19D0070EFFB /* GifReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifReader.swift; sourceTree = "<group>"; };
+		D94D4FF82616A1F90070EFFB /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		D94D50082616A9160070EFFB /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		D96090582613D2CA001320DA /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		D9DE28002611678800B5EC3F /* LastEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastEventsViewModel.swift; sourceTree = "<group>"; };
 		D9DE28042611712F00B5EC3F /* AllTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsViewModel.swift; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 		D917C4B8260FC4C9002A6F21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D94D4FF82616A1F90070EFFB /* LaunchScreenViewController.swift */,
 				D9E375822615AA2B0028E61A /* WelcomeViewController.swift */,
 				D917C4A0260FC470002A6F21 /* HomeViewControllers.swift */,
 				D96090582613D2CA001320DA /* FavouriteViewController.swift */,
@@ -307,6 +314,7 @@
 		D917C4BB260FC4DB002A6F21 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D94D50082616A9160070EFFB /* launch.gif */,
 				D9F55C95261003FC00B03552 /* Fonts */,
 				D917C4A8260FC471002A6F21 /* Assets.xcassets */,
 				D917C4AD260FC471002A6F21 /* Info.plist */,
@@ -409,6 +417,7 @@
 				D9F55C912610030C00B03552 /* UIColor.swift */,
 				D9F55CE826101CFC00B03552 /* UIImageView.swift */,
 				D91BD0BC261071DB0004D015 /* CustomUILabel.swift */,
+				D94D4FF42616A19D0070EFFB /* GifReader.swift */,
 			);
 			path = "Custome + Extenstion";
 			sourceTree = "<group>";
@@ -583,6 +592,7 @@
 				D91BD0C4261074530004D015 /* UpcommingCell.xib in Resources */,
 				D91BD0CD2610785C0004D015 /* ResultCell.xib in Resources */,
 				D917C4A9260FC471002A6F21 /* Assets.xcassets in Resources */,
+				D94D50092616A9160070EFFB /* launch.gif in Resources */,
 				D917C4E9260FCCF2002A6F21 /* SportsCell.xib in Resources */,
 				D917C4A4260FC470002A6F21 /* Main.storyboard in Resources */,
 				D9E3757F2615A8BA0028E61A /* WelcomCell.xib in Resources */,
@@ -678,6 +688,7 @@
 				D917C49D260FC470002A6F21 /* AppDelegate.swift in Sources */,
 				D9126F3926111335000C2EA7 /* EventsResponse.swift in Sources */,
 				D91BD09A261062350004D015 /* LeagueCell.swift in Sources */,
+				D94D4FF92616A1F90070EFFB /* LaunchScreenViewController.swift in Sources */,
 				D9F55CA52610090D00B03552 /* BaseURL.swift in Sources */,
 				D9126F45261115D9000C2EA7 /* TeamsNetworking.swift in Sources */,
 				D9126F1E26110618000C2EA7 /* TeamsCell.swift in Sources */,
@@ -700,6 +711,7 @@
 				D917C4A7260FC470002A6F21 /* Sports_App.xcdatamodeld in Sources */,
 				D9F55CD0261010B000B03552 /* SportsResponse.swift in Sources */,
 				D9126F5E26111E2B000C2EA7 /* UpcommingEventsViewModel.swift in Sources */,
+				D94D4FF52616A19D0070EFFB /* GifReader.swift in Sources */,
 				D91BD0AF261067790004D015 /* LeaguesModel.swift in Sources */,
 				D9126F35261112FA000C2EA7 /* EventsAPI.swift in Sources */,
 				D9126F4B261117E3000C2EA7 /* TeamsAPI.swift in Sources */,

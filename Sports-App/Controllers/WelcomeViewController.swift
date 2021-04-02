@@ -29,8 +29,10 @@ class WelcomeViewController: UIViewController {
  """
               ]
     let ImageArr = ["AllSports","Barchelona","ResultsImage"]
-    var currentItem = IndexPath()
+    var currentItem = IndexPath(row: 0, section: 0)
 
+    var count = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,14 +41,25 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func BTNNext (_ sender: Any) {
+        collectionView.reloadData()
+        count += 1
+        print("BeforeID: \(self.currentItem.row)")
+        self.currentItem.row += 1
+        print("ID: \(self.currentItem.row)")
         
-        let nextItem = NSIndexPath(row: currentItem.row + 1, section: 0)
+//        var nextItem = IndexPath(item: count, section: 0)
+        
+        print("F1 \(currentItem.row)")
+        let nextItem = IndexPath(row: currentItem.row, section: 0)
         
         if nextItem.row == 2 {
             NextButton.setTitle("let's do it", for: .normal)
+            
+
+            collectionView.scrollToItem(at: nextItem, at: .left, animated: true)
         }
         
-        if nextItem.row == 3 {
+        else if nextItem.row == 3 {
             print("Finished!")
             
             let story = UIStoryboard(name: "Main", bundle: nil)
@@ -56,8 +69,9 @@ class WelcomeViewController: UIViewController {
             
         }
         else {
-            collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
+            collectionView.scrollToItem(at: nextItem, at: .left, animated: true)
         }
+
         
     }
     
@@ -113,6 +127,10 @@ extension WelcomeViewController: UICollectionViewDelegate {
             NextButton.setTitle("Next", for: .normal)
         }
         self.PaggineControl.currentPage = indexPath.row
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        self.currentItem = indexPath
     }
     
 }

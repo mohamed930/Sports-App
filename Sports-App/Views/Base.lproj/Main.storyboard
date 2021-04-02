@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HhP-nZ-ItF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0oE-Ey-q9k">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -326,7 +326,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgv-VH-Vt0" customClass="CustomUILabel" customModule="Sports_App" customModuleProvider="target">
-                                                <rect key="frame" x="62.999999999999986" y="17.333333333333336" width="156.66666666666663" height="16.333333333333336"/>
+                                                <rect key="frame" x="62.999999999999986" y="15.999999999999998" width="156.66666666666663" height="19.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -384,7 +384,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pga-8u-Pi8">
-                                <rect key="frame" x="5" y="227.99999999999997" width="364" height="429.33333333333326"/>
+                                <rect key="frame" x="5" y="228" width="364" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TUU-B3-Gol">
                                     <size key="itemSize" width="128" height="128"/>
@@ -417,7 +417,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams in a English Premier League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5W-Qe-Yop">
-                                <rect key="frame" x="5" y="673.33333333333337" width="364" height="18.666666666666629"/>
+                                <rect key="frame" x="5" y="670" width="364" height="22"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -666,10 +666,39 @@
             </objects>
             <point key="canvasLocation" x="-170.40000000000001" y="1546.5517241379312"/>
         </scene>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="RNL-Qe-iNr">
+            <objects>
+                <viewController id="0oE-Ey-q9k" customClass="LaunchScreenViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Mr-uk-Wxt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gkZ-vR-uTy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kNo-az-v4O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gkZ-vR-uTy" firstAttribute="leading" secondItem="kNo-az-v4O" secondAttribute="leading" id="5gT-6W-3cF"/>
+                            <constraint firstItem="gkZ-vR-uTy" firstAttribute="trailing" secondItem="kNo-az-v4O" secondAttribute="trailing" id="bjX-9t-yQV"/>
+                            <constraint firstAttribute="bottom" secondItem="gkZ-vR-uTy" secondAttribute="bottom" id="vyz-yN-iKQ"/>
+                            <constraint firstItem="gkZ-vR-uTy" firstAttribute="top" secondItem="6Mr-uk-Wxt" secondAttribute="top" id="zAP-tK-1Wx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WaitImageView" destination="gkZ-vR-uTy" id="KrG-RT-G1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="773-ar-Hud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063.2" y="-1143.1034482758621"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="JhV-5h-OGY">
             <objects>
-                <viewController id="HhP-nZ-ItF" customClass="WelcomeViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="HhP-nZ-ItF" customClass="WelcomeViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BuV-SG-5s7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
