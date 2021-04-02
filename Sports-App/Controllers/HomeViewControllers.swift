@@ -56,6 +56,7 @@ class HomeViewControllers: UIViewController {
                 self.SportsLeading.constant = 30
                 self.SportsTrailing.constant = 10
                 self.PlaceHolder(textField: self.SearchTextField, PlaceHolder: "Enter Sport name", Color: UIColor.white)
+                self.SearchTextField.becomeFirstResponder()
                 self.view.layoutIfNeeded()
             }
         }
@@ -172,7 +173,6 @@ class HomeViewControllers: UIViewController {
             self.SportsLeading.constant = 166
             self.SportsTrailing.constant = 151.67
             //self.PlaceHolder(textField: self.SearchTextField, PlaceHolder: "Enter Sport name", Color: UIColor.white)
-            self.SearchTextField.becomeFirstResponder()
             self.view.layoutIfNeeded()
         }
     }
