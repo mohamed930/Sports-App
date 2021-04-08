@@ -17,7 +17,7 @@ class LaunchScreenViewController: UIViewController {
         WaitImageView.loadGif(name: "launch")
         
         // .now()+1.54
-        DispatchQueue.main.asyncAfter(deadline: .now()+1.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2.6) {
             let story = UIStoryboard(name: "Main", bundle: nil)
             let next  = story.instantiateViewController(withIdentifier: "WelcomeViewController")
             next.modalPresentationStyle = .fullScreen

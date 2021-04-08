@@ -11,6 +11,7 @@ import Alamofire
 class BaseAPI<T:TargetType> {
     
     func fetchData<M:Decodable> (Target:T, ClassName:M.Type, completion:@escaping (Result<M?,NSError>) -> ()) {
+        
         let method = Alamofire.HTTPMethod(rawValue: Target.method.rawValue)
         let headers = Alamofire.HTTPHeaders(Target.headers ?? [:])
         let params = buildParams(task: Target.task)

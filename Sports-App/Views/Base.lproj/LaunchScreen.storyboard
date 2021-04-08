@@ -24,10 +24,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Xul-Rf-1t7"/>
-                            <constraint firstAttribute="bottom" secondItem="ORQ-aU-DHg" secondAttribute="bottom" id="hYO-EI-Fj0"/>
-                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lCe-CN-pn4"/>
-                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s24-wZ-q8u"/>
+                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q13-4I-AYt"/>
+                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rwf-wQ-iBv"/>
+                            <constraint firstItem="ORQ-aU-DHg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oYt-jk-8hB"/>
+                            <constraint firstAttribute="bottom" secondItem="ORQ-aU-DHg" secondAttribute="bottom" id="ry5-jc-Ef0"/>
                         </constraints>
                     </view>
                     <connections>

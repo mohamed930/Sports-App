@@ -123,7 +123,7 @@ class HomeViewControllers: UIViewController {
     }
     
     func showAlertView() {
-        let alertController = UIAlertController(title: "Attentio", message: "you are offline try reconnect", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Attention", message: "you are offline try reconnect", preferredStyle: .alert)
 
         let okAction = UIAlertAction(title: "Try again", style: .default) { (alert) in
             do{
