@@ -11,10 +11,10 @@ class AllTemasModel: Codable {
     
     var idTeam: String
     var strTeam: String
-    var strTeamBadge: String
-    var strLeague: String
-    var strStadium: String
-    var strDescriptionEN: String
+    var strTeamBadge: String?
+    var strLeague: String?
+    var strStadium: String?
+    var strDescriptionEN: String?
     var strFacebook: String?
     var strTwitter: String?
     var strInstagram: String?

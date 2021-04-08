@@ -138,7 +138,7 @@ class LeaguesDetailsViewController: UIViewController {
             case .success(let res):
                 
                 for i in (res?.teams)! {
-                    let ob = AllTeamsViewModel(idTeam: i.idTeam, strTeam: i.strTeam, strTeamBadge: i.strTeamBadge)
+                    let ob = AllTeamsViewModel(idTeam: i.idTeam, strTeam: i.strTeam, strTeamBadge: i.strTeamBadge ?? "NoImage")
                     self.AllTeamsArr.append(ob)
                     self.TeamsCV.reloadData()
                 }
@@ -306,9 +306,16 @@ extension LeaguesDetailsViewController: UICollectionViewDataSource {
             
             cell.TeamNameLabel.text = AllTeamsArr[indexPath.row].strTeam
             
-            DispatchQueue.main.async {
-                cell.TeamLogoImageView.kf.setImage(with:URL(string: self.AllTeamsArr[indexPath.row].strTeamBadge))
+            if self.AllTeamsArr[indexPath.row].strTeamBadge == "" || self.AllTeamsArr[indexPath.row].strTeamBadge == "NoImage" {
+                cell.TeamLogoImageView.image = UIImage(named: "No_image")
             }
+            else {
+                DispatchQueue.main.async {
+                    cell.TeamLogoImageView.kf.setImage(with:URL(string: self.AllTeamsArr[indexPath.row].strTeamBadge))
+                }
+            }
+            
+            
             
             return cell
         }

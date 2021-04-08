@@ -326,8 +326,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgv-VH-Vt0" customClass="CustomUILabel" customModule="Sports_App" customModuleProvider="target">
-                                                <rect key="frame" x="62.999999999999986" y="15.999999999999998" width="156.66666666666663" height="19.333333333333329"/>
-                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
+                                                <rect key="frame" x="62.999999999999986" y="16.666666666666664" width="156.66666666666663" height="18"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="13"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -551,13 +551,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Villa Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQe-1E-Y55">
-                                <rect key="frame" x="159" y="233.33333333333334" width="83.666666666666686" height="22.666666666666657"/>
+                                <rect key="frame" x="168" y="233" width="67.666666666666657" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="42476stadium_99096" translatesAutoresizingMaskIntoConstraints="NO" id="TaV-Fs-GAq">
-                                <rect key="frame" x="131" y="234.66666666666666" width="20" height="20"/>
+                                <rect key="frame" x="140" y="234" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="BNw-Jt-36p"/>
                                     <constraint firstAttribute="width" constant="20" id="hNa-PE-eRV"/>
@@ -593,9 +593,8 @@
                             <constraint firstItem="3C4-tB-5hr" firstAttribute="top" secondItem="Hwv-63-t7Y" secondAttribute="bottom" constant="9.3333333333333712" id="mhl-lE-Omp"/>
                             <constraint firstItem="kVW-ct-ZxL" firstAttribute="trailing" secondItem="IYf-Ju-q9p" secondAttribute="trailing" constant="11" id="q7b-UY-320"/>
                             <constraint firstItem="xrb-oD-Qd7" firstAttribute="leading" secondItem="kVW-ct-ZxL" secondAttribute="leading" id="sUb-AN-nSD"/>
-                            <constraint firstItem="TaV-Fs-GAq" firstAttribute="leading" secondItem="kVW-ct-ZxL" secondAttribute="leading" constant="131" id="sVe-qK-Cca"/>
                             <constraint firstItem="xrb-oD-Qd7" firstAttribute="top" secondItem="v0D-KA-fYD" secondAttribute="bottom" id="y7L-18-mBo"/>
-                            <constraint firstItem="mQe-1E-Y55" firstAttribute="centerX" secondItem="oOo-kU-VZq" secondAttribute="centerX" constant="13.333333333333343" id="zHc-hu-ems"/>
+                            <constraint firstItem="mQe-1E-Y55" firstAttribute="centerX" secondItem="oOo-kU-VZq" secondAttribute="centerX" constant="14.166666666666657" id="zHc-hu-ems"/>
                         </constraints>
                     </view>
                     <connections>
