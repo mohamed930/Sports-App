@@ -11,7 +11,7 @@ class SportsModel: Codable {
     
     var sportID: String
     var sportName: String
-    var SportThumbnail: String
+    var SportThumbnail: String?
     var SportType: String
     
     enum CodingKeys: String,CodingKey {

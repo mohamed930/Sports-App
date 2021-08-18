@@ -81,7 +81,7 @@ class HomeViewControllers: UIViewController {
                     
                     for i in (res?.sports)! {
                         
-                        let newob = SportsViewModel(sportID: i.sportID , sportName: i.sportName , SportThumbnail: i.SportThumbnail , SportType: i.SportType)
+                        let newob = SportsViewModel(sportID: i.sportID , sportName: i.sportName , SportThumbnail: i.SportThumbnail ?? "No_image" , SportType: i.SportType)
                         
                         self.SportsArr.append(newob)
                         self.collectionView.reloadData()
@@ -202,17 +202,33 @@ extension HomeViewControllers: UICollectionViewDataSource {
         
         if !FiletedSportsArr.isEmpty {
             cell.SportNameLabel.text = FiletedSportsArr[indexPath.row].sportName
-            DispatchQueue.main.async {
-                cell.SportImageView.kf.setImage(with:URL(string: self.FiletedSportsArr[indexPath.row].SportThumbnail))
-                
+            
+            if self.FiletedSportsArr[indexPath.row].SportThumbnail == "No_image" {
+                cell.SportImageView.image = UIImage(named: "No_image")
             }
+            else {
+                DispatchQueue.main.async {
+                    cell.SportImageView.kf.setImage(with:URL(string: self.FiletedSportsArr[indexPath.row].SportThumbnail))
+                    
+                }
+            }
+            
+            
         }
         else {
             cell.SportNameLabel.text = SportsArr[indexPath.row].sportName
-            DispatchQueue.main.async {
-                cell.SportImageView.kf.setImage(with:URL(string: self.SportsArr[indexPath.row].SportThumbnail))
-                
+            
+            if self.SportsArr[indexPath.row].SportThumbnail == "No_image" {
+                cell.SportImageView.image = UIImage(named: "No_image")
             }
+            else {
+                DispatchQueue.main.async {
+                    cell.SportImageView.kf.setImage(with:URL(string: self.SportsArr[indexPath.row].SportThumbnail))
+                    
+                }
+            }
+            
+            
         }
         
         return cell
